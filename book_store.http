@@ -1,0 +1,29 @@
+@rootUrl = http://localhost:8080
+
+get {{rootUrl}}/book
+
+###
+get {{rootUrl}}/book/1234
+
+###
+post {{rootUrl}}/book
+Content-Type: application/json
+
+{
+  "name": "xalqa",
+  "author": "Akrom Malik",
+  "publication": "unknown"
+}
+
+###
+put {{rootUrl}}/book/1235
+Content-Type: application/json
+
+{
+  "name": "xalqa",
+  "author": "Akrom Malik",
+  "publication": "unknown"
+}
+
+###
+delete {{rootUrl}}/book/1234

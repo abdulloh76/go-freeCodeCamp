@@ -14,8 +14,9 @@ import (
 func GetBooks(response http.ResponseWriter, request *http.Request) {
 	books := models.GetAllBooks()
 	res, _ := json.Marshal(books)
+	fmt.Println("get all book being called")
 
-	response.Header().Set("Content-Type", "application/json")
+	response.Header().Set("Content-Type", "pkglication/json")
 	response.WriteHeader(http.StatusOK)
 	response.Write(res)
 }

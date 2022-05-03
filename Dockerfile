@@ -1,13 +1,12 @@
 FROM golang:1.16-alpine
 
-WORKDIR ./ app
+WORKDIR /app
 
-COPY go.mod ./
-COPY go.sum ./
+COPY . .
 
-RUN go mod download
+# RUN go mod download
+RUN go get ./...
+# RUN apk update && apk add bash && bash setup-env.sh docker
+# RUN go build -o cmd/main.go
 
-COPY ./cmd ./cmd
-COPY ./pkg ./pkg
-
-CMD ["go", "run", "./cmd/main.go"]
+CMD ["go", "run", "cmd/main.go"]

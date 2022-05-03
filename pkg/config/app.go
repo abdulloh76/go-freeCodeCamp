@@ -1,10 +1,18 @@
 package config
 
 import (
-	"book-store/pkg/utils"
+	"fmt"
 
 	"gorm.io/driver/postgres"
 	"gorm.io/gorm"
+)
+
+const (
+	HOST     = "localhost"
+	PORT     = 5432
+	USER     = "postgres"
+	PASSWORD = "postgres"
+	DB_NAME  = "postgres"
 )
 
 var (
@@ -12,17 +20,11 @@ var (
 )
 
 func Connect() {
-	// configure postgres for the db
-	host := utils.POSTGRES_HOST
-	user := utils.POSTGRES_USER
-	password := utils.POSTGRES_PASSWORD
-	dbname := utils.POSTGRES_DB
-	port := utils.POSTGRES_PORT
+	dsn := fmt.Sprintf("host=%s user=%s password=%s dbname=%s port=%d", HOST, USER, PASSWORD, DB_NAME, PORT)
 
-	dsn := "host=" + host + "user=" + user + "password=" + password + "dbname=" + dbname + "port=" + port + " sslmode=disable TimeZone=Asia/Shanghai"
 	d, err := gorm.Open(postgres.Open(dsn), &gorm.Config{})
 
-	if err == nil {
+	if err != nil {
 		panic(err)
 	}
 	db = d
