@@ -3,27 +3,27 @@
 get {{rootUrl}}/book
 
 ###
-get {{rootUrl}}/book/1234
+get {{rootUrl}}/book/1
 
 ###
 post {{rootUrl}}/book
 Content-Type: application/json
 
 {
-  "name": "xalqa",
-  "author": "Akrom Malik",
-  "publication": "unknown"
+  "Name": "xalqa",
+  "Author": "Akrom Malik",
+  "Publication": "unknown"
 }
 
 ###
-put {{rootUrl}}/book/1235
+put {{rootUrl}}/book/1
 Content-Type: application/json
 
 {
-  "name": "xalqa",
-  "author": "Akrom Malik",
-  "publication": "unknown"
+  "Name": "Xalqa",
+  "Author": "Akrom Malik",
+  "Publication": "Media Nashr"
 }
 
 ###
-delete {{rootUrl}}/book/1234
+delete {{rootUrl}}/book/1
