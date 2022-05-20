@@ -1,0 +1,20 @@
+@rootUrl = http://localhost:3000
+
+get {{rootUrl}}/api/lead
+
+###
+get {{rootUrl}}/api/lead/23
+
+###
+post {{rootUrl}}/api/lead
+Content-Type: application/json
+
+{
+  "name": "Bob",
+  "company": "Uber",
+  "email": "john@uber.com",
+  "phone": 8459848
+}
+
+###
+delete {{rootUrl}}/api/lead/1
